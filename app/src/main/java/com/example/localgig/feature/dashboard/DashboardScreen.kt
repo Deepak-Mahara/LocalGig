@@ -17,11 +17,17 @@ import com.example.localgig.domain.model.GigJob
 import com.example.localgig.domain.model.LocalJob
 import com.example.localgig.feature.dashboard.components.*
 
+// feature/dashboard/DashboardScreen.kt
+
 @Composable
 fun DashboardScreen(
-    viewModel: DashboardViewModel = viewModel()
+    viewModel: DashboardViewModel = viewModel(),
+    initialIsLocalRole: Boolean = true // ADD THIS PARAMETER
 ) {
-    var isLocalRole by remember { mutableStateOf(true) }
+    // Initialize the state with the passed parameter
+    var isLocalRole by remember { mutableStateOf(initialIsLocalRole) }
+
+    // ... rest of your DashboardScreen code remains the same ...
     var selectedBottomTab by remember { mutableIntStateOf(0) }
     var selectedJobSubTab by remember { mutableIntStateOf(0) }
 
